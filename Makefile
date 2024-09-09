@@ -10,4 +10,3 @@ altermac.o: altermac.c
 
 clean:
 	rm -f altermac *.o
-

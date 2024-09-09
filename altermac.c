@@ -69,11 +69,13 @@ int main(int argc, char *argv[]){
 
 	srand(getpid());
 	mac = generatemac();
-	if (chmac(If, mac))
-		printf("0x%llx\n", (long long)mac.addr);
-	else
+	if (chmac(If, mac)){
+		printf("Mac address is changed to 0x%llx\n", (long long)mac.addr);
+	}
+	else{
+		printf("Mac address can not be changed to 0x%llx\n", (long long)mac.addr);
 		assert_perror(errno);
+	}
 
 	return 0;
 }
-
